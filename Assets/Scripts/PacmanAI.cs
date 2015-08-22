@@ -15,7 +15,7 @@ public class PacmanAI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(!target){
 			FindTarget();
 		}
@@ -28,6 +28,8 @@ public class PacmanAI : MonoBehaviour {
 		if (Col.collider.tag == "Ghost") {
 			Instantiate (PacExp, transform.position, Quaternion.identity);
 			Destroy (gameObject);
+		} else if (Col.collider.tag == "Dot") {
+			Destroy (Col.gameObject);
 		}
 	}
 	void FindTarget(){
