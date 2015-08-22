@@ -9,7 +9,13 @@ public class TimedSceneChange : MonoBehaviour {
 	void Awake () {
 		Invoke ("ChangeScene", WaitTime);
 	}
-	
+
+	void Update () {
+		if (Input.anyKey) {
+			ChangeScene ();
+		}
+	}
+
 	void ChangeScene () {
 		Application.LoadLevel (1);
 	}
