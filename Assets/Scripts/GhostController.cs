@@ -18,4 +18,5 @@ public class GhostController : MonoBehaviour {
 		Agent.destination = GMoveTo;
 
 	}
+
 }

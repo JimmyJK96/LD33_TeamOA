@@ -4,7 +4,7 @@ using System.Collections;
 public class PacmanAI : MonoBehaviour {
 
 	private NavMeshAgent PacAgent;
-
+	public GameObject PacExp;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,7 @@ public class PacmanAI : MonoBehaviour {
 
 	void OnCollisionEnter(Collision Col){
 		if (Col.collider.tag == "Ghost") {
+			Instantiate (PacExp, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}
 	}
