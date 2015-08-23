@@ -17,6 +17,6 @@ public class TimedSceneChange : MonoBehaviour {
 	}
 
 	void ChangeScene () {
-		Application.LoadLevel (1);
+		Application.LoadLevel (LevelToLoad);
 	}
 }

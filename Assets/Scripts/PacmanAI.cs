@@ -7,6 +7,7 @@ public class PacmanAI : MonoBehaviour {
 	public GameObject PacExp;
 	private GameObject[] listDots;
 	public Transform target;
+	private RaycastHit PacHit;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,13 @@ public class PacmanAI : MonoBehaviour {
 		}
 		else{
 			PacAgent.destination = target.position;
+		}
+
+		if (Physics.Raycast (transform.position, transform.forward, out PacHit, 3f)) {
+			if (PacHit.transform.tag == "Ghost"){
+				Debug.Log ("Fuck Fuck Fuck!");
+				FindTarget();
+			}
 		}
 	}
 
