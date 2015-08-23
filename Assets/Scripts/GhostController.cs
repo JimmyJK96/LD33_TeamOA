@@ -14,9 +14,12 @@ public class GhostController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+
 		Agent.destination = GMoveTo;
 
 	}
+
+
 
 }
