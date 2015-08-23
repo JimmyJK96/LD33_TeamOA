@@ -1,47 +1,15 @@
 fileFormatVersion: 2
-guid: 9d1fa36a390f16c4d84ffe459c0769bd
-timeCreated: 1440256798
+guid: 15bfab0e8fdc6184fb5de8bde813780a
+timeCreated: 1440296538
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: 1x1RockA
-    100002: 1x1RockB
-    100004: 2x1RockA
-    100006: 2x1RockB
-    100008: 3x1RockA
-    100010: 3x1RockB
-    100012: //RootNode
-    100014: 4x3RockSB
-    400000: 1x1RockA
-    400002: 1x1RockB
-    400004: 2x1RockA
-    400006: 2x1RockB
-    400008: 3x1RockA
-    400010: 3x1RockB
-    400012: //RootNode
-    400014: 4x3RockSB
-    2300000: 1x1RockA
-    2300002: 1x1RockB
-    2300004: 2x1RockA
-    2300006: 2x1RockB
-    2300008: 3x1RockA
-    2300010: 3x1RockB
-    2300012: 4x3RockSB
-    3300000: 1x1RockA
-    3300002: 1x1RockB
-    3300004: 2x1RockA
-    3300006: 2x1RockB
-    3300008: 3x1RockA
-    3300010: 3x1RockB
-    3300012: 4x3RockSB
-    4300000: 1x1RockA
-    4300002: 1x1RockB
-    4300004: 2x1RockA
-    4300006: 2x1RockB
-    4300008: 3x1RockA
-    4300010: 3x1RockB
-    4300012: 4x3RockSB
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: 2x8Cliff
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -67,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .5
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

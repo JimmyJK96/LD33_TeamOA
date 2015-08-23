@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 6d93b467620a992498c2fccc717082fb
-timeCreated: 1440259612
+guid: 6d8f5c894b64ec540ab5483e9dcf8070
+timeCreated: 1440296538
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
+    100000: Collider
+    100002: Graphics
+    100004: //RootNode
+    400000: Collider
+    400002: Graphics
+    400004: //RootNode
+    2300000: Collider
+    2300002: Graphics
+    3300000: Collider
+    3300002: Graphics
+    4300000: Collider
+    4300002: Graphics
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -35,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
