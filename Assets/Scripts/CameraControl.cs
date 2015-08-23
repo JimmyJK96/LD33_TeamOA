@@ -54,7 +54,7 @@ public class CameraControl : MonoBehaviour {
 	void FixedUpdate () {
 	
 		MoveTo += new Vector3 (Input.GetAxis ("Horizontal")*0.1f, -Input.GetAxis ("Mouse ScrollWheel")*10f, Input.GetAxis ("Vertical")*0.1f);
-		transform.position = Vector3.Lerp (transform.position, MoveTo, Speed);
+		transform.localPosition = Vector3.Lerp (transform.localPosition, MoveTo, Speed);
 
 
 
