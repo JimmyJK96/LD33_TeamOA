@@ -52,12 +52,12 @@ public class CameraControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-	
+		//Camera move
 		MoveTo += new Vector3 (Input.GetAxis ("Horizontal")*0.1f, -Input.GetAxis ("Mouse ScrollWheel")*10f, Input.GetAxis ("Vertical")*0.1f);
-		transform.localPosition = Vector3.Lerp (transform.localPosition, MoveTo, Speed);
-
-
-
+		MoveTo.x = Mathf.Clamp (MoveTo.x, -20f, 20f);
+		MoveTo.z = Mathf.Clamp (MoveTo.z, -20f, 20f);
+		MoveTo.y = Mathf.Clamp (MoveTo.y, 3f, 30f);
+		transform.position = Vector3.Lerp (transform.position, MoveTo, Speed);
 	}
 
 	void TagGhost () {
