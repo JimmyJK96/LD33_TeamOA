@@ -30,25 +30,25 @@ public class CameraControl : MonoBehaviour {
 
 	void Update () {
 
-		if (Input.GetButtonDown ("1")) {
+		if (Input.GetButtonDown ("1") && Ghosts[0]) {
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[0];
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
-		} else if (Input.GetButtonDown ("2")) {
+		} else if (Input.GetButtonDown ("2") && Ghosts[1]) {
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[1];
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
-		} else if (Input.GetButtonDown ("3")) {
+		} else if (Input.GetButtonDown ("3") && Ghosts[2]) {
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[2];
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
-		} else if (Input.GetButtonDown ("4")) {
+		} else if (Input.GetButtonDown ("4") && Ghosts[3]) {
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[3];
 		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);

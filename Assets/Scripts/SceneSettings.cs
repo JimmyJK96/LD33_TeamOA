@@ -47,36 +47,52 @@ public class SceneSettings : MonoBehaviour {
 	}
 
 	public void Ghost1L () {
-		GC0 -= 1;
-		Ghost1 ();
+		if (GC0 != 0) {
+			GC0 -= 1;
+			Ghost1 ();
+		}
 	}
 	public void Ghost1R () {
-		GC0 += 1;
-		Ghost1 ();
+		if (GC0 != Characters.Length - 1) {
+			GC0 += 1;
+			Ghost1 ();
+		}
 	}
 	public void Ghost2L () {
-		GC1 -= 1;
-		Ghost2 ();
+		if (GC1 != 0) {
+			GC1 -= 1;
+			Ghost2 ();
+		}
 	}
 	public void Ghost2R () {
-		GC1 += 1;
-		Ghost2 ();
+		if (GC1 != Characters.Length - 1) {
+			GC1 += 1;
+			Ghost2 ();
+		}
 	}
 	public void Ghost3L () {
-		GC2 -= 1;
-		Ghost3 ();
+		if (GC2 != 0) {
+			GC2 -= 1;
+			Ghost3 ();
+		}
 	}
 	public void Ghost3R () {
-		GC2 += 1;
-		Ghost3 ();
+		if (GC2 != Characters.Length - 1) {
+			GC2 += 1;
+			Ghost3 ();
+		}
 	}
 	public void Ghost4L () {
-		GC3 -= 1;
-		Ghost4 ();
+		if (GC3 != 0) {
+			GC3 -= 1;
+			Ghost4 ();
+		}
 	}
 	public void Ghost4R () {
-		GC3 += 1;
-		Ghost4 ();
+		if (GC3 != Characters.Length - 1) {
+			GC3 += 1;
+			Ghost4 ();
+		}
 	}
 
 
