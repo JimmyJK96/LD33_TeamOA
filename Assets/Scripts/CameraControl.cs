@@ -17,6 +17,8 @@ public class CameraControl : MonoBehaviour {
 	private GhostController AG;
 	private GhostInfo GI;
 
+
+
 	// Use this for initialization
 	void Awake () {
 	

@@ -4,7 +4,6 @@ using System.Collections;
 public class SceneSettings : MonoBehaviour {
 
 	public string mainGhost;
-
 	// Use this for initialization
 	void Start () {
 		mainGhost = "TB";
