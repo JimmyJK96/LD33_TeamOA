@@ -71,7 +71,7 @@ public class CameraControl : MonoBehaviour {
 		MoveTo += new Vector3 (Input.GetAxis ("Horizontal")*Speed, -Input.GetAxis ("Mouse ScrollWheel")*10f, Input.GetAxis ("Vertical")*Speed);
 		MoveTo.x = Mathf.Clamp (MoveTo.x, -20f, 20f);
 		MoveTo.z = Mathf.Clamp (MoveTo.z, -20f, 20f);
-		MoveTo.y = Mathf.Clamp (MoveTo.y, 3f, 30f);
+		MoveTo.y = Mathf.Clamp (MoveTo.y, 5f, 30f);
 		transform.position = Vector3.Lerp (transform.position, MoveTo, Speed);
 	}
 
