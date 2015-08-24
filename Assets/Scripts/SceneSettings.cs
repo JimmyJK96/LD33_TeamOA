@@ -4,9 +4,28 @@ using System.Collections;
 public class SceneSettings : MonoBehaviour {
 
 	public string mainGhost;
+
+	public GameObject[] Ghosts;
+	public GameObject[] Characters;
+
+	private int GC0;
+	private int GC1;
+	private int GC2;
+	private int GC3;
 	// Use this for initialization
-	void Start () {
-		mainGhost = "TB";
+	void OnLevelWasLoaded () {
+		Debug.Log ("Durka durka");
+		DontDestroyOnLoad(transform.gameObject);
+
+		Ghosts [0] = GameObject.Find ("Ghost (1)");
+		Ghosts [1] = GameObject.Find ("Ghost (2)");
+		Ghosts [2] = GameObject.Find ("Ghost (3)");
+		Ghosts [3] = GameObject.Find ("Ghost (4)");
+
+		Ghost1 ();
+		Ghost2 ();
+		Ghost3 ();
+		Ghost4 ();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +46,64 @@ public class SceneSettings : MonoBehaviour {
 
 	}
 
-	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
+	public void Ghost1L () {
+		GC0 -= 1;
+		Ghost1 ();
 	}
+	public void Ghost1R () {
+		GC0 += 1;
+		Ghost1 ();
+	}
+	public void Ghost2L () {
+		GC1 -= 1;
+		Ghost2 ();
+	}
+	public void Ghost2R () {
+		GC1 += 1;
+		Ghost2 ();
+	}
+	public void Ghost3L () {
+		GC2 -= 1;
+		Ghost3 ();
+	}
+	public void Ghost3R () {
+		GC2 += 1;
+		Ghost3 ();
+	}
+	public void Ghost4L () {
+		GC3 -= 1;
+		Ghost4 ();
+	}
+	public void Ghost4R () {
+		GC3 += 1;
+		Ghost4 ();
+	}
+
+
+	void Ghost1 () {
+		if (Ghosts [0].transform.childCount != 0) {
+			Destroy (Ghosts [0].transform.GetChild (0).gameObject);
+		}
+		GameObject NG = (GameObject) Instantiate (Characters [GC0], Ghosts[0].transform.position, Ghosts[0].transform.rotation);
+		NG.transform.parent = Ghosts [0].transform;
+	}
+	void Ghost2 () {
+		if (Ghosts [1].transform.childCount != 0) {
+			Destroy (Ghosts [1].transform.GetChild (0).gameObject);
+		}		GameObject NG = (GameObject) Instantiate (Characters [GC1], Ghosts[1].transform.position, Ghosts[1].transform.rotation);
+		NG.transform.parent = Ghosts [1].transform;
+	}
+	void Ghost3 () {
+		if (Ghosts [2].transform.childCount != 0) {
+			Destroy (Ghosts [2].transform.GetChild (0).gameObject);
+		}		GameObject NG = (GameObject) Instantiate (Characters [GC2], Ghosts[2].transform.position, Ghosts[2].transform.rotation);
+		NG.transform.parent = Ghosts [2].transform;
+	}
+	void Ghost4 () {
+		if (Ghosts [3].transform.childCount != 0) {
+			Destroy (Ghosts [3].transform.GetChild (0).gameObject);
+		}		GameObject NG = (GameObject) Instantiate (Characters [GC3], Ghosts[3].transform.position, Ghosts[3].transform.rotation);
+		NG.transform.parent = Ghosts [3].transform;
+	}
+
 }

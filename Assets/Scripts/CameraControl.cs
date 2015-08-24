@@ -23,9 +23,7 @@ public class CameraControl : MonoBehaviour {
 	void Awake () {
 	
 		MoveTo = transform.position;
-		//ActiveGhost = Ghosts [1];
-		string focusGhost = GameObject.Find ("Settings").GetComponent<SceneSettings> ().mainGhost;
-		ActiveGhost = GameObject.Find (focusGhost); 
+		ActiveGhost = Ghosts [0];
 		Audio = GetComponent<AudioSource> ();
 
 	}
@@ -33,27 +31,27 @@ public class CameraControl : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetButtonDown ("1")) {
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[0];
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("2")) {
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[1];
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("3")) {
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[2];
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("4")) {
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[3];
-			ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
+		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		}
@@ -81,6 +79,7 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	void PlaySoundEffect() {
+		GI = AG.gameObject.GetComponentInChildren<GhostInfo> ();
 		SoundEffect = GI.OnActiveAudio[Random.Range (0, 3)];
 		Audio.PlayOneShot (SoundEffect);
 	}
@@ -90,7 +89,7 @@ public class CameraControl : MonoBehaviour {
 		ActiveGhost = Hit.transform.gameObject;
 		ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 		AG = ActiveGhost.GetComponent<GhostController>();
-		GI = AG.gameObject.GetComponentInChildren<GhostInfo> ();
+//		GI = AG.gameObject.GetComponentInChildren<GhostInfo> ();
 		PlaySoundEffect();
 	}
 	void TagFloor () {
