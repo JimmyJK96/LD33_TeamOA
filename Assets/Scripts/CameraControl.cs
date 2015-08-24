@@ -15,6 +15,7 @@ public class CameraControl : MonoBehaviour {
 
 	private AudioSource Audio;
 	private GhostController AG;
+	private GhostInfo GI;
 
 	// Use this for initialization
 	void Awake () {
@@ -78,7 +79,7 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	void PlaySoundEffect() {
-		SoundEffect = AG.OnActiveAudio[Random.Range (0, 3)];
+		SoundEffect = GI.OnActiveAudio[Random.Range (0, 3)];
 		Audio.PlayOneShot (SoundEffect);
 	}
 
@@ -87,6 +88,7 @@ public class CameraControl : MonoBehaviour {
 		ActiveGhost = Hit.transform.gameObject;
 		ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 		AG = ActiveGhost.GetComponent<GhostController>();
+		GI = AG.gameObject.GetComponentInChildren<GhostInfo> ();
 		PlaySoundEffect();
 	}
 	void TagFloor () {

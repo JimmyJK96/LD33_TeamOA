@@ -38,7 +38,7 @@ public class PacmanAI : MonoBehaviour {
 	void OnCollisionEnter(Collision Col){
 		if (Col.collider.tag == "Ghost") {
 			Instantiate (PacExp, transform.position, Quaternion.identity);
-			AS.PlayOneShot (Col.gameObject.GetComponent<GhostController>().OnKillAudio);
+			AS.PlayOneShot (Col.gameObject.GetComponentInChildren<GhostInfo>().OnKillAudio);
 			GetComponent<Collider>().enabled = false;
 			GetComponent<Renderer>().enabled = false;
 			Destroy (gameObject, 3f);
