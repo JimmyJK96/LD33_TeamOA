@@ -20,7 +20,9 @@ public class CameraControl : MonoBehaviour {
 	void Awake () {
 	
 		MoveTo = transform.position;
-		ActiveGhost = Ghosts [1];
+		//ActiveGhost = Ghosts [1];
+		string focusGhost = GameObject.Find ("Settings").GetComponent<SceneSettings> ().mainGhost;
+		ActiveGhost = GameObject.Find (focusGhost); 
 		Audio = GetComponent<AudioSource> ();
 
 	}
