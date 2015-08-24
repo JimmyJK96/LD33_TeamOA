@@ -5,7 +5,7 @@ public class MenuScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Application.LoadLevel ("MainGame");
+		Application.LoadLevel (2);
 	}
 
 }

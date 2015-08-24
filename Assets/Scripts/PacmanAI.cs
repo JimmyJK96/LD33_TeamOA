@@ -9,10 +9,13 @@ public class PacmanAI : MonoBehaviour {
 	public Transform target;
 	private RaycastHit PacHit;
 
+	private AudioSource AS;
+
 	// Use this for initialization
 	void Start () {
 		listDots = GameObject.FindGameObjectsWithTag("Dot");
 		PacAgent = GetComponent<NavMeshAgent> ();
+		AS = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -35,7 +38,10 @@ public class PacmanAI : MonoBehaviour {
 	void OnCollisionEnter(Collision Col){
 		if (Col.collider.tag == "Ghost") {
 			Instantiate (PacExp, transform.position, Quaternion.identity);
-			Destroy (gameObject);
+			AS.PlayOneShot (Col.gameObject.GetComponent<GhostController>().OnKillAudio);
+			GetComponent<Collider>().enabled = false;
+			GetComponent<Renderer>().enabled = false;
+			Destroy (gameObject, 3f);
 		} else if (Col.collider.tag == "Dot") {
 			Destroy (Col.gameObject);
 		}
