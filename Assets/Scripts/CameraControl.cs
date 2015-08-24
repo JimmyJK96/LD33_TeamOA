@@ -16,6 +16,8 @@ public class CameraControl : MonoBehaviour {
 	private AudioSource Audio;
 	private GhostController AG;
 
+
+
 	// Use this for initialization
 	void Awake () {
 	
