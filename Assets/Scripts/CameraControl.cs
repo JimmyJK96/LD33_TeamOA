@@ -6,6 +6,8 @@ public class CameraControl : MonoBehaviour {
 	public float Speed = 0.1f;
 	private Vector3 MoveTo;
 
+	public GameObject ClickEffects;
+
 	public GameObject ActiveGhost;
 	public GameObject[] Ghosts;
 	private RaycastHit Hit;
@@ -31,27 +33,19 @@ public class CameraControl : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetButtonDown ("1") && Ghosts[0]) {
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[0];
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("2") && Ghosts[1]) {
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[1];
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("3") && Ghosts[2]) {
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[2];
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		} else if (Input.GetButtonDown ("4") && Ghosts[3]) {
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 			ActiveGhost = Ghosts[3];
-		//	ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 			AG = ActiveGhost.GetComponent<GhostController>();
 			PlaySoundEffect();
 		}
@@ -85,9 +79,7 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	void TagGhost () {
-		ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (false);
 		ActiveGhost = Hit.transform.gameObject;
-		ActiveGhost.transform.Find ("ActiveParticles").gameObject.SetActive (true);
 		AG = ActiveGhost.GetComponent<GhostController>();
 //		GI = AG.gameObject.GetComponentInChildren<GhostInfo> ();
 		PlaySoundEffect();
@@ -95,6 +87,8 @@ public class CameraControl : MonoBehaviour {
 	void TagFloor () {
 		if (ActiveGhost != null) {
 			ActiveGhost.GetComponent<GhostController>().GMoveTo = Hit.point;
+			GameObject CE = (GameObject) Instantiate (ClickEffects, Hit.point, Quaternion.identity);
+			Destroy (CE, 4f);
 		}
 	}
 
