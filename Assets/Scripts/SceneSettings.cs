@@ -13,9 +13,12 @@ public class SceneSettings : MonoBehaviour {
 	private int GC2;
 	private int GC3;
 	// Use this for initialization
+	void Start () {
+		DontDestroyOnLoad(transform.gameObject);
+	}
+
 	void OnLevelWasLoaded () {
 		Debug.Log ("Durka durka");
-		DontDestroyOnLoad(transform.gameObject);
 
 		Ghosts [0] = GameObject.Find ("Ghost (1)");
 		Ghosts [1] = GameObject.Find ("Ghost (2)");

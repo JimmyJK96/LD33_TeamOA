@@ -53,6 +53,7 @@ public class PacmanAI : MonoBehaviour {
 				AS.PlayOneShot (Col.gameObject.GetComponentInChildren<GhostInfo>().OnKillAudio);
 				GetComponent<Collider>().enabled = false;
 				GetComponent<Renderer>().enabled = false;
+				Destroy (GameObject.Find ("Settings"));
 				Destroy (gameObject, 3f);
 			}
 		
